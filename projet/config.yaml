@@ -1,0 +1,21 @@
+production: # environnement 
+  database: epic_db
+  username: admin
+  password: 3e9e6ad8efc0d530436c2cef8d63d26d410ee172953946f22250f06b72a4bc8c 
+  host: localhost
+  init_data_user:
+    fullname: admin
+    email: admin@epic.com
+    password: 3e9e6ad8efc0d530436c2cef8d63d26d410ee172953946f22250f06b72a4bc8c
+    department: M
+
+test:
+  database: epic_test
+  username: admin
+  password: 3e9e6ad8efc0d530436c2cef8d63d26d410ee172953946f22250f06b72a4bc8c
+  host: localhost
+  init_data_user:
+    fullname: admin
+    email: admin@epic.com
+    password: 3e9e6ad8efc0d530436c2cef8d63d26d410ee172953946f22250f06b72a4bc8c
+    department: M
