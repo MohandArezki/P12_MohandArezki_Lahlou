@@ -21,7 +21,7 @@ class User(Base):
 
     Relationships:
     - customers: One-to-Many relationship with Customer model.
-    - supports: One-to-Many relationship with Event model.
+    - events: One-to-Many relationship with Event model.
 
     Methods:
     - department_name: Returns the name of the user's department.
@@ -37,8 +37,8 @@ class User(Base):
     department = Column(Enum('M', 'S', 'C', name='department'), nullable=False, info={"label": "Department"})
 
     customers = relationship("Customer", back_populates="contact", cascade="all, delete")
-    supports = relationship("Event", back_populates="support")
-
+    events = relationship("Event", back_populates="support")
+ 
     @property
     def department_name(self):
         """Returns the name of the user's department."""
@@ -49,7 +49,7 @@ class User(Base):
         return len(self.customers)   
      
     def supported_events_count(self, status=["Planned", "Ongoing", "Passed"]):
-        return sum(1 for event in self.supports if event.status in status)
+        return sum(1 for event in self.events if event.status in status)
 
     def contracts_count(self, signed=[True, False]):
         return sum(customer.contracts_count(signed) for customer in self.customers)
@@ -92,7 +92,7 @@ class User(Base):
                 continue_revoke = input(f"The user supports ({supported_events}) events. "
                                          f"Continue with revoking all assignments? (Y/N): ")
                 if continue_revoke.lower() == "y":
-                    for event in target.supports:
+                    for event in target.events:
                         event.support_id = None
                 else:
                     raise ValueError("Operation cancelled")

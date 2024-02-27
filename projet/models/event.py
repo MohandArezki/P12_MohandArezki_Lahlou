@@ -32,9 +32,8 @@ class Event(Base):
     contract_id = Column(Integer, ForeignKey('contract.id'), nullable=False)
     support_id = Column(Integer, ForeignKey('user.id'), nullable=True)
     
-    contract = relationship("Contract", back_populates="events")    
-    support = relationship("User", back_populates="supports")
-    
+    support = relationship('User', back_populates='events')
+    contract = relationship('Contract', back_populates='events')
     @property
     def status(self):
         """Get the status of the event (Planned, Ongoing, or Passed)."""

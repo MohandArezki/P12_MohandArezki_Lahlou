@@ -1,12 +1,31 @@
 from faker import Faker
+import os
+from datetime import datetime
+import logging
 import hashlib
 
 from controllers.database import DBManager
+from controllers.user import UserManager
 from models.user import User
 from models.customer import Customer
 from models.contract import Contract
 from models.event import Event
 
+
+def setup_logging():
+    """
+    Set up logging configuration.
+    """
+    logs_directory = "logs"
+    os.makedirs(logs_directory, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"{logs_directory}/data_generation_{timestamp}.log"
+
+    logging.basicConfig(
+        filename=filename,
+        level=logging.DEBUG,
+        format='%(asctime)s [%(levelname)s]: %(message)s'
+    )
 
 def create_fake_users(session, user_count=5, department='M'):
     """
@@ -142,7 +161,7 @@ def create_fake(session):
     Args:
         session: SQLAlchemy session object.
     """
-    
+    setup_logging()
     print("Creating fake users...")
     managers = create_fake_users(session, user_count=3, department='M')
     commercials = create_fake_users(session, user_count=5, department='C')
