@@ -23,10 +23,6 @@ class Console(cmd.Cmd):
             'display': console.DisplayCommand(),
         }  
 
-        self.do_login("-email admin@epic.com")
-        self.do_activate("-object user -id 5")
-        self.do_create("-object customer")
-        
         self.postcmd("")
 
     def do_login(self, arg):
