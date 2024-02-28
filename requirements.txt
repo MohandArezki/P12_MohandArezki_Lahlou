@@ -1,6 +1,7 @@
 certifi==2024.2.2
 cffi==1.16.0
 cryptography==42.0.5
+Faker==23.2.1
 greenlet==3.0.3
 jwcrypto==1.5.4
 prettytable==3.10.0
@@ -9,9 +10,11 @@ pycparser==2.21
 PyInputPlus==0.2.12
 PyJWT==2.8.0
 PySimpleValidate==0.2.12
+python-dateutil==2.8.2
 python-jwt==4.1.0
 PyYAML==6.0.1
 sentry-sdk==1.40.5
+six==1.16.0
 SQLAlchemy==2.0.27
 stdiomask==0.0.6
 typing_extensions==4.10.0
