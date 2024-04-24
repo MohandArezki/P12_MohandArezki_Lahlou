@@ -290,3 +290,4 @@ ________________________________________ Welcome - EPIC-CRM ____________________
 ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+![image](https://github.com/MohandArezki/P12_MohandArezki_Lahlou/assets/91838551/44b3a387-d2fe-4f02-a958-677c3117a33b)
