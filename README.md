@@ -1,14 +1,13 @@
-# EPIC-CRM System
-
 ------------------
 <h3 align="center">
     <img alt="Logo" title="#logo" src="assets/img/logo.png">
     <br>
 </h3>
 
-# OpenClassrooms - Formation Développeur d'application Python - Projet 12
-
-## Développez une architecture back-end sécurisée avec Python et SQL
+# Projet 12
+Développez une architecture back-end sécurisée avec Python et SQL
+## Objectifs pédagogiques
+1. Mettre en œuvre une base de données sécurisée avec Python et SQL
 
 ## Le projet 
 Ce système CRM (Gestion de la Relation Client) offre des fonctionnalités pour la gestion des utilisateurs, des clients, des contrats et des événements. Les utilisateurs peuvent effectuer diverses actions en fonction de leur département et des permissions qui leur sont accordées.
